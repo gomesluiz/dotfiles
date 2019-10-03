@@ -30,6 +30,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set noshiftround 
+set number 
 
 set showcmd	    " show (partial) command in status line
 set showmatch	  " show matching brackets
