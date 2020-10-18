@@ -1,3 +1,8 @@
+"================================== vim plugins  ============================== 
+call plug#begin()
+Plug 'preservim/NERDTree'
+call plug#end()
+
 " Use vim settings, rather then vi settings. This must be first,
 " because it changes other options as side a effect.
 set nocompatible
@@ -22,3 +27,6 @@ set hidden
 
 " turn on syntax highlighting
 syntax on
+
+"================================  keys bindings ============================== 
+map <C-n> :NERDTreeToggle<CR>
