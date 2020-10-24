@@ -2,6 +2,8 @@
 call plug#begin()
 Plug 'preservim/NERDTree'
 Plug 'vim-latex/vim-latex'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Use vim settings, rather then vi settings. This must be first,
