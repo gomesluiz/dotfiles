@@ -1,6 +1,7 @@
 "================================== vim plugins  ============================== 
 call plug#begin()
 Plug 'preservim/NERDTree'
+Plug 'vim-latex/vim-latex'
 call plug#end()
 
 " Use vim settings, rather then vi settings. This must be first,
@@ -30,3 +31,7 @@ syntax on
 
 "================================  keys bindings ============================== 
 map <C-n> :NERDTreeToggle<CR>
+
+"===============================  vim-latex setup ============================= 
+let g:Tex_MultipleCompileFormats='pdf'
+let g:Tex_DefaultTargetFormat='pdf'
