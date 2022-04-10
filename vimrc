@@ -1,14 +1,25 @@
-"================================== vim plugins  ============================== 
-call plug#begin()
-Plug 'preservim/NERDTree'
-Plug 'vim-latex/vim-latex'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-call plug#end()
-
 " Use vim settings, rather then vi settings. This must be first,
 " because it changes other options as side a effect.
 set nocompatible
+filetype off
+
+"================================== vim plugins  ============================== 
+"call plug#begin()
+"Plug 'preservim/NERDTree'
+"Plug 'vim-latex/vim-latex'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"call plug#end()
+
+" set the runtime path to include Vundle and initialize 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required.
+Plugin 'gmarik/Vundle.vim'
+
+call vundle#end()
+filetype plugin indent on 
 
 "============================= general configuration ========================== 
 set number relativenumber		" line numbers are good
