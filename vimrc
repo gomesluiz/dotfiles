@@ -22,18 +22,19 @@ call vundle#end()
 filetype plugin indent on 
 
 "============================= general configuration ========================== 
-set number relativenumber		" line numbers are good
+set number relativenumber		      " line numbers are good
 set backspace=indent,eol,start		" allow backspace in insert mode
-set history=1000			" store lots of :cmdline history
-set showcmd				" show incomplete cmds down the bottom
-set gcr=a:blink0			" disable cursor link
-set visualbell				" no sounds
-set autoread				" reload files changed outside vim 
+set history=1000			            " store lots of :cmdline history
+set showcmd				                " show incomplete cmds down the bottom
+set gcr=a:blink0			            " disable cursor link
+set visualbell				            " no sounds
+set autoread				              " reload files changed outside vim 
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab 
-
+set splitbelow
+set splitright
 
 " This make vim act like all others editors, buffers can exist in the backgrou-
 " nd without being in a window.
@@ -44,6 +45,12 @@ syntax on
 
 "================================  keys bindings ============================== 
 map <C-n> :NERDTreeToggle<CR>
+
+" split keys navigation.
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "===============================  vim-latex setup ============================= 
 let g:Tex_MultipleCompileFormats='pdf'
