@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # fill variables with own values.
-keyspath  = ""  # ssh keys source secret path. 
-gituser   = ""	# git user name
-gitemail  = ""	# git user e-mail
+keyspath  = '' # ssh keys source secret path. 
+gituser   = '' # git user name
+gitemail  = '' # git user e-mail
 
 # Set up ssh.
 echo "[ssh] setting up keys."
@@ -34,8 +34,7 @@ git config --global user.email "$gitemail"
 ssh -T git@github.com
 
 echo "[vim] setting up vim editor." 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-ln -s ./vimrc ~/.vimrc
+ln -s ~/Workspace/dotfiles/vimrc ~/.vimrc
 
