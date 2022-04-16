@@ -4,21 +4,23 @@ set nocompatible
 filetype off
 
 "================================== vim plugins  ============================== 
-"call plug#begin()
-"Plug 'preservim/NERDTree'
-"Plug 'vim-latex/vim-latex'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-"call plug#end()
-
 " set the runtime path to include Vundle and initialize 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required.
+" vundle plugin. 
 Plugin 'gmarik/Vundle.vim'
 
+" nerdtree plugin. 
+Plugin 'scrooloose/nerdtree'
+
+" simplyfold plugin. 
+Plugin 'tmhedberg/SimpylFold'
+
+Bundle 'Valloric/YouCompleteMe'
+
 call vundle#end()
+
 filetype plugin indent on 
 
 "============================= general configuration ========================== 
@@ -35,12 +37,10 @@ set softtabstop=2
 set expandtab 
 set splitbelow
 set splitright
-
-" This make vim act like all others editors, buffers can exist in the backgrou-
-" nd without being in a window.
 set hidden 
-
-" turn on syntax highlighting
+set foldmethod=indent 
+set foldlevel=99
+set encoding=utf-8                " utf-8 support
 syntax on
 
 "================================  keys bindings ============================== 
@@ -51,7 +51,31 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <space> za 
 
-"===============================  vim-latex setup ============================= 
-let g:Tex_MultipleCompileFormats='pdf'
-let g:Tex_DefaultTargetFormat='pdf'
+"================================= plugins setup ============================== 
+let NERDTreeIgnore=['\.pyc$', '\~$']       " ignore files in NERDTree.
+let g:SimpylFold_docstring_preview=1       " show docstring for folded code. 
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf=0
+let g:ycm_python_binary_path='/usr/bin/python3'
+"====================== programming languages setup =========================== 
+au BufNewFile, BufRead *.py 
+  \ set tabstop=4
+  \ set softtabstop=4
+  \ set shiftwidth=4
+  \ set textwidth=79
+  \ set expandtab 
+  \ set autoindent
+  \ set fileformat=unix
+
+au BufNewFile, BufRead *.js, *.html, *.css 
+  \ set tabstop=2
+  \ set softtabstop=2
+  \ set shiftwidth=2
+
+" flagging unnecessary whitespace 
+au BufNewFile, BufRead *.py, *.pwc, *.c, *.h match BadWhitespace /\s\+$/ 
