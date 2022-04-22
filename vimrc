@@ -8,16 +8,11 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" vundle plugin. 
-Plugin 'gmarik/Vundle.vim'
-
-" nerdtree plugin. 
-Plugin 'scrooloose/nerdtree'
-
-" simplyfold plugin. 
-Plugin 'tmhedberg/SimpylFold'
-
+Plugin 'gmarik/Vundle.vim'              " vundle plugin. 
+Plugin 'scrooloose/nerdtree'            " nerdtree plugin. 
+Plugin 'tmhedberg/SimpylFold'           " simplyfold plugin. 
 Bundle 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/indentpython.vim'   " auto-identaion. 
 
 call vundle#end()
 
