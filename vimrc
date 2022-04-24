@@ -8,13 +8,16 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'              " vundle plugin. 
-Plugin 'scrooloose/nerdtree'            " nerdtree plugin. 
-Plugin 'tmhedberg/SimpylFold'           " simplyfold plugin. 
+Plugin 'gmarik/Vundle.vim'                  " vundle plugin. 
+Plugin 'scrooloose/nerdtree'                " nerdtree plugin. 
+Plugin 'tmhedberg/SimpylFold'               " simplyfold plugin. 
 Bundle 'Valloric/YouCompleteMe'         
-Plugin 'vim-scripts/indentpython.vim'   " auto-identaion. 
-Plugin 'vim-syntastic/syntastic'        " syntax checking. 
-Plugin 'nvie/vim-flake8'                " PEP8 syntax cheking. 
+Plugin 'vim-scripts/indentpython.vim'       " auto-identaion. 
+Plugin 'vim-syntastic/syntastic'            " syntax checking. 
+Plugin 'nvie/vim-flake8'                    " PEP8 syntax cheking. 
+Plugin 'jnurmine/Zenburn'                   " theme for terminal mode.
+Plugin 'altercation/vim-colors-solarized'   " theme for terminal mode.
+
 
 call vundle#end()
 
@@ -49,6 +52,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <space> za 
 
+call togglebg#map("<F5>")
 "================================= plugins setup ============================== 
 let NERDTreeIgnore=['\.pyc$', '\~$']       " ignore files in NERDTree.
 
@@ -89,4 +93,11 @@ if 'VIRTUAL_ENV' in os.environ:
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
   execfile(activate_this, dict(__file__=activate_this))
 EOF
+
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+else
+  colorscheme zenburn 
+endif 
 
