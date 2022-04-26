@@ -17,7 +17,7 @@ Plugin 'vim-syntastic/syntastic'            " syntax checking.
 Plugin 'nvie/vim-flake8'                    " PEP8 syntax cheking. 
 Plugin 'jnurmine/Zenburn'                   " theme for terminal mode.
 Plugin 'altercation/vim-colors-solarized'   " theme for terminal mode.
-
+Plugin 'kien/ctrlp.vim'                     " super searching.
 
 call vundle#end()
 
