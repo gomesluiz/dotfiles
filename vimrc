@@ -18,7 +18,11 @@ Plugin 'nvie/vim-flake8'                    " PEP8 syntax cheking.
 Plugin 'jnurmine/Zenburn'                   " theme for terminal mode.
 Plugin 'altercation/vim-colors-solarized'   " theme for terminal mode.
 Plugin 'kien/ctrlp.vim'                     " super searching.
+Plugin 'tpope/vim-fugitive'                 " git integration.
 
+" powerline status bar.
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+ 
 call vundle#end()
 
 filetype plugin indent on 
@@ -41,7 +45,7 @@ set hidden
 set foldmethod=indent 
 set foldlevel=99
 set encoding=utf-8                " utf-8 support
-
+set clipboard=unnamed
 "================================  keys bindings ============================== 
 map <C-n> :NERDTreeToggle<CR>
 

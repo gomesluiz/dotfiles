@@ -5,4 +5,3 @@ bash ~/tmp/miniconda.sh -b -p $HOME/miniconda
 eval "$(/home/gomesluiz/miniconda/bin/conda shell.bash hook)" >> $HOME/.bashrc
 source $HOME/.bashrc
 conda init
-
