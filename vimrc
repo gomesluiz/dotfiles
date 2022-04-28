@@ -67,7 +67,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
 let g:ycm_python_binary_path='/usr/bin/python3'
-
+let g:Powerline_symbols="fancy"
 let python_highlight_all = 1 
 syntax on
 "====================== programming languages setup =========================== 
@@ -84,6 +84,9 @@ au BufNewFile, BufRead *.js, *.html, *.css
   \ set tabstop=2
   \ set softtabstop=2
   \ set shiftwidth=2
+
+set laststatus=2
+set t_Co=256
 
 " flagging unnecessary whitespace.
 au BufNewFile, BufRead *.py, *.pwc, *.c, *.h match BadWhitespace /\s\+$/ 
@@ -104,4 +107,3 @@ if has('gui_running')
 else
   colorscheme zenburn 
 endif 
-
