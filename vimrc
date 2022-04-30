@@ -19,6 +19,7 @@ Plugin 'jnurmine/Zenburn'                   " theme for terminal mode.
 Plugin 'altercation/vim-colors-solarized'   " theme for terminal mode.
 Plugin 'kien/ctrlp.vim'                     " super searching.
 Plugin 'tpope/vim-fugitive'                 " git integration.
+Plugin 'sansyrox/vim-python-virtualenv'     " virtualenv support 
 
 " powerline status bar.
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -69,6 +70,8 @@ let g:ycm_confirm_extra_conf=0
 let g:ycm_python_binary_path='/usr/bin/python3'
 let g:Powerline_symbols="fancy"
 let python_highlight_all = 1 
+
+let g:python3_host_prog='/usr/bin/python3'
 syntax on
 "====================== programming languages setup =========================== 
 au BufNewFile, BufRead *.py 
@@ -90,16 +93,6 @@ set t_Co=256
 
 " flagging unnecessary whitespace.
 au BufNewFile, BufRead *.py, *.pwc, *.c, *.h match BadWhitespace /\s\+$/ 
-
-" python with virtual support
-py3 << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 if has('gui_running')
   set background=dark
