@@ -8,29 +8,29 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'                  " vundle plugin. 
-Plugin 'scrooloose/nerdtree'                " nerdtree plugin. 
+Plugin 'gmarik/Vundle.vim'                  " vim plugin manager. 
+Plugin 'scrooloose/nerdtree'                " project folders tree. 
 Plugin 'kien/ctrlp.vim'                     " super searching.
 Plugin 'tpope/vim-fugitive'                 " git integration.
-Plugin 'tmhedberg/SimpylFold'               " simplyfold plugin. 
-Plugin 'sansyrox/vim-python-virtualenv'     " virtualenv support 
-
+Plugin 'tmhedberg/SimpylFold'               " code folding. 
+Plugin 'sansyrox/vim-python-virtualenv'     " venv support.
+                          
 Plugin 'Valloric/YouCompleteMe'             " auto-complete. 
-Plugin 'vim-scripts/indentpython.vim'     
-Plugin 'sheerun/vim-polyglot'               " auto-identaion for any language. 
+Plugin 'vim-scripts/indentpython.vim'       " python identation.     
+Plugin 'sheerun/vim-polyglot'               " code auto-identaion.
 Plugin 'vim-syntastic/syntastic'            " syntax checking. 
 Plugin 'nvie/vim-flake8'                    " PEP8 syntax cheking. 
 Plugin 'rstacruz/vim-closer'                " ([{ auto-complete
 Plugin 'tpope/vim-surround'                 " ([{ auto-complete
 
-Plugin 'altercation/vim-colors-solarized'   " theme for vim.
-Plugin 'jnurmine/Zenburn'                   " theme for terminal mode.
-Plugin 'vim-airline/vim-airline'             " airline status bar 
-Plugin 'vim-airline/vim-airline-themes'      " themes for airline status bar.  
-Plugin 'morhetz/gruvbox'                     " retro theme.
+" Plugin 'altercation/vim-colors-solarized'   " theme for vim.
+" Plugin 'jnurmine/Zenburn'                   " theme for terminal mode.
+" Plugin 'vim-airline/vim-airline'          " airline status bar 
+" Plugin 'vim-airline/vim-airline-themes'   " themes for airline status bar.  
+Plugin 'morhetz/gruvbox'                    " retro theme.
 
 " powerline status bar.
-" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
  
 call vundle#end()
 
@@ -66,6 +66,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <space> za 
 
 call togglebg#map("<F5>")
+
 "================================= plugins setup ============================== 
 let NERDTreeIgnore=['\.pyc$', '\~$']       " ignore files in NERDTree.
 
@@ -76,9 +77,10 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
 let g:ycm_python_binary_path='/usr/bin/python3'
-"let g:Powerline_symbols="fancy"
-"let python_highlight_all = 1 
-let g:airline_theme='simple'
+let g:Powerline_symbols="fancy"
+let python_highlight_all = 1 
+
+"let g:airline_theme='simple'
 let g:python3_host_prog='/usr/bin/python3'
 syntax on
 "====================== programming languages setup =========================== 
@@ -102,11 +104,11 @@ set t_Co=256
 " flagging unnecessary whitespace.
 au BufNewFile, BufRead *.py, *.pwc, *.c, *.h match BadWhitespace /\s\+$/ 
 
-if has('gui_running')
-  "set background=dark
-  "colorscheme solarized
-  colorscheme zenburn 
-else
-  colors gruvbox 
-  set background=dark
-endif 
+"if has('gui_running')
+"  set background=dark
+"  colorscheme solarized
+"else
+"  colorscheme zenburn 
+colors gruvbox 
+set background=dark
+"endif 
