@@ -23,14 +23,14 @@ Plugin 'nvie/vim-flake8'                    " PEP8 syntax cheking.
 Plugin 'rstacruz/vim-closer'                " ([{ auto-complete
 Plugin 'tpope/vim-surround'                 " ([{ auto-complete
 
-" Plugin 'altercation/vim-colors-solarized'   " theme for vim.
-" Plugin 'jnurmine/Zenburn'                   " theme for terminal mode.
-" Plugin 'vim-airline/vim-airline'          " airline status bar 
-" Plugin 'vim-airline/vim-airline-themes'   " themes for airline status bar.  
+Plugin 'altercation/vim-colors-solarized'   " theme for vim.
+Plugin 'jnurmine/Zenburn'                   " theme for terminal mode.
+Plugin 'vim-airline/vim-airline'            " airline status bar 
+Plugin 'vim-airline/vim-airline-themes'     " themes for airline status bar.  
 Plugin 'morhetz/gruvbox'                    " retro theme.
 
 " powerline status bar.
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
  
 call vundle#end()
 
@@ -65,23 +65,42 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <space> za 
 
-call togglebg#map("<F5>")
+"call togglebg#map("<F5>")
 
 "================================= plugins setup ============================== 
 let NERDTreeIgnore=['\.pyc$', '\~$']       " ignore files in NERDTree.
 
 let g:SimpylFold_docstring_preview=1       " show docstring for folded code. 
-
+let g:airline_powerline_fonts=1
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
 let g:ycm_python_binary_path='/usr/bin/python3'
-let g:Powerline_symbols="fancy"
+" let g:Powerline_symbols="fancy"
 let python_highlight_all = 1 
 
-"let g:airline_theme='simple'
+let g:airline_theme='powerlineish'
 let g:python3_host_prog='/usr/bin/python3'
+
+"Fonts for the Status Line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+"Unicode symbols for the Status Line
+let g:airline_left_alt_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_alt_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.readonly = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
 syntax on
 "====================== programming languages setup =========================== 
 au BufNewFile, BufRead *.py 
