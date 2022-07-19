@@ -29,6 +29,8 @@ Plugin 'vim-airline/vim-airline'            " airline status bar
 Plugin 'vim-airline/vim-airline-themes'     " themes for airline status bar.  
 Plugin 'morhetz/gruvbox'                    " retro theme.
 
+"Plugin 'python-rope/ropevim'                " python refactoring
+
 " powerline status bar.
 " Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
  
@@ -77,7 +79,6 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
 let g:ycm_python_binary_path='/usr/bin/python3'
-" let g:Powerline_symbols="fancy"
 let python_highlight_all = 1 
 
 let g:airline_theme='powerlineish'
@@ -123,11 +124,5 @@ set t_Co=256
 " flagging unnecessary whitespace.
 au BufNewFile, BufRead *.py, *.pwc, *.c, *.h match BadWhitespace /\s\+$/ 
 
-"if has('gui_running')
-"  set background=dark
-"  colorscheme solarized
-"else
-"  colorscheme zenburn 
 colors gruvbox 
 set background=dark
-"endif 
