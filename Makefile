@@ -1,10 +1,7 @@
 all: pull source update
 
 source:
-	cp ~/.dotfiles/.aliases ~/.aliases
-	cp ~/.dotfiles/.zshrc ~/.zshrc
-	cp ~/.dotfiles/.bashrc ~/.bashrc
-	cp ~/.dotfiles/.bash_profile ~/.bash_profile
+	ln -sf ~/.dotfiles/aliases ~/.aliases
 
 pull:
 	git pull
