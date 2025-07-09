@@ -1,10 +1,10 @@
-all: pull source update
+all: source update
 
 source:
 	ln -sf ~/.dotfiles/aliases ~/.aliases
-
-pull:
-	git pull
+	ln -sf ~/.dotfiles/bashrc ~/.bashrc
+	ln -sf ~/.dotfiles/bash_profile ~/.bash_profile
+	ln -sf ~/.dotfiles/zshrc ~/.zshrc
 
 update:
 	antigen selfupdate
