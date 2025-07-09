@@ -1,0 +1,8 @@
+# sudo using alias
+alias dnfu='sudo dnf upgrade -y && flatpak update -y'
+
+#
+alias vim='nvim'
+
+#
+alias la='ls -lisa'
