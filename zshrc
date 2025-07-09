@@ -13,3 +13,19 @@ compinit
 
 # Aliases definition
 source ~/.aliases
+
+autoload antigen
+# Antigen source
+source ~/.dotfiles/antigen/antigen.zsh
+
+# Install oh-my-zsh
+antigen use oh-my-zsh
+
+# Install necessary plugins
+antigen bundle arialdomartini/oh-my-git
+antigen bundle git 
+
+# Default theme
+antigen theme ys
+
+antigen apply
