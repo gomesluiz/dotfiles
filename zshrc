@@ -15,17 +15,25 @@ compinit
 source ~/.aliases
 
 autoload antigen
+
 # Antigen source
 source ~/.dotfiles/antigen/antigen.zsh
 
-# Install oh-my-zsh
+# Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# Install necessary plugins
-antigen bundle arialdomartini/oh-my-git
-antigen bundle git 
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
 
-# Default theme
-antigen theme ys
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
 
+# Load the theme.
+antigen theme af-magic
+
+# Tell Antigen that you're done.
 antigen apply
