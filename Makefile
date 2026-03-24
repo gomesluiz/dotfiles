@@ -1,3 +1,5 @@
+ANTIGEN_PATH=$(HOME)/.dotfiles/antigen/bin/antigen.zsh
+
 all: source update
 
 source:
@@ -7,8 +9,8 @@ source:
 	ln -sf ~/.dotfiles/zshrc ~/.zshrc
 
 update:
-	antigen selfupdate
-	antigen update
+	zsh -c "source $(ANTIGEN_PATH) && antigen selfupdate"
+	zsh -c "source $(ANTIGEN_PATH) && antigen update"
 
 antigen:
 	git clone https://github.com/zsh-users/antigen.git
